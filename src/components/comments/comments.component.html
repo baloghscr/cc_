@@ -1,0 +1,60 @@
+<div class="comments">
+    <div class="lead">
+        <div class="count">comments({{comments.length}})</div>
+        <div class="btn" (click)=toggleDisplay()>
+            {{isShow ? 'Add comment' : 'Close'}}
+        </div>
+    </div>
+    <div class="add" [hidden]="isShow">
+        <form [formGroup]="submitForm" (ngSubmit)="onSubmit(submitForm.value)" novalidate>
+
+            <input
+                id="user"
+                type="text"
+                formControlName="user"
+                placeholder="User name"
+                required
+            >
+            <div *ngIf="submitForm.controls['user'].invalid && (submitForm.controls['user'].dirty || submitForm.controls['user'].touched)" class="alert">
+                <div *ngIf="submitForm.controls['user'].errors.required">
+                *User name is required.
+                </div>
+            </div>
+            <textarea
+                id="content"
+                type="text"
+                formControlName="content"
+                placeholder="Message"
+                required
+            ></textarea>
+            <div *ngIf="submitForm.controls['content'].invalid && (submitForm.controls['content'].dirty || submitForm.controls['content'].touched)" class="alert">
+                <div *ngIf="submitForm.controls['content'].errors.required">
+                  *Message is required.
+                </div>
+            </div>
+            <button class="btn" type="submit" [disabled]="submitForm.pristine || submitForm.invalid">Send</button>
+          
+        </form>
+    </div>
+    <div class="comment" *ngFor="let comment of comments; let i = index">
+        <div class="comment-id">
+            <span>
+                #{{i + 1}}
+            </span>
+        </div>
+        <div>
+            <div class="comment-user">
+                {{comment.user}}
+            </div>
+            <div class="comment-date">
+                {{comment.date}}
+            </div>
+            <div class="comment-content">
+                {{comment.content}}
+            </div>
+        </div>
+    </div>
+    <div class="empty" *ngIf="comments.length === 0">
+        There is no comments yet. Be the first!
+    </div>
+</div>

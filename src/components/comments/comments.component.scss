@@ -1,0 +1,109 @@
+@import "../../styles/variables";
+
+.comments{
+    border-top: 1px dashed #CFCFCF;
+    margin: rem(20px) 0;
+    .btn{
+        background-color: $main-color;
+        padding: rem(5px) rem(10px);
+        border-radius: rem(3px);
+        color: #fff;
+        box-shadow: 0 rem(1px) rem(3px) rgba(0,0,0,0.3);
+        cursor: pointer;
+        &:hover {
+            background-color: lighten( $main-color, 10% );
+        }
+        &:active {
+            background-color: lighten( $main-color, 20% );
+            box-shadow: 0 0 rem(3px) rgba(0,0,0,0.1);
+        }
+    }
+    .lead{
+        padding: rem(20px) 0;
+        display: flex;
+        justify-content: space-between;
+        .count{opacity: 0.5;}
+    }
+    .comment{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: rem(15px);
+        &:nth-child(even){background: #ebebeb}
+        &:nth-child(odd){
+            background: transparent;
+            border: rem(1px) solid #dddddd;
+        }
+        > div{
+            &:nth-child(2){
+                border-left: rem(1px) solid #dddddd;
+                padding: rem(20px) rem(10px);
+            }
+        }
+        &-id{
+            position: relative;
+            min-width: rem(60px);
+            height: rem(60px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span {
+                font-size: rem(30px);
+                font-weight: bold;
+                color: rgba(0,0,0,0.1);
+            }
+        }
+        &-date{
+            font-size: rem(10px);
+            opacity: .3;
+        }
+        &-user{
+            color: $main-color;
+        }
+        &-content{
+            color: #585858;
+            font-size: rem(12px);
+            line-height: rem(18px);
+            word-break: break-all;
+        }
+    }
+    .add{
+        form{
+            display: flex;
+            flex-direction: column;
+            input, textarea {
+                border: rem(1px) solid #dfdfdf;
+                padding: rem(10px);
+                border-radius: rem(4px);
+                margin: rem(10px) 0;
+                resize: none;
+                &:focus {
+                    border-color: $main-color;
+                }
+            }
+            textarea {
+                min-height: rem(100px);
+            }
+            .alert{
+                color: #dd0a38;
+                font-size: rem(12px);
+            }
+            .btn{
+                border: none;
+                margin: rem(10px) auto rem(20px);
+                padding: rem(10px) rem(30px);
+                &:disabled {
+                    background-color: #dd0a38;
+                    opacity: .5;
+                }
+            }
+        }
+    }
+    .empty{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: rem(60px);
+        color: $main-color;
+    }
+}

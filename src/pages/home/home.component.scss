@@ -1,0 +1,21 @@
+@import "../../styles/variables";
+
+header{
+    margin-bottom: rem(40px);
+    color: $background;
+    font-weight: bold;
+    font-size: rem(33px);
+    text-transform: uppercase;
+    line-height: rem(22px);
+    letter-spacing: rem(-2px);
+    @include gradient(#3eb733, #dae500);
+    p{
+        margin: 0;
+    }
+}
+
+.contentWrapper{
+    display: block;
+    margin: auto;
+    max-width: rem(450px);
+}

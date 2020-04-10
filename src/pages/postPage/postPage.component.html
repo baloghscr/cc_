@@ -1,0 +1,26 @@
+<div class="postPage">
+    <header>
+        <div class="back">
+            <a routerLink="/" routerLinkActive="active">
+                back
+            </a>
+        </div>
+        <div class="author">
+            <div class="avatar">
+                <span>
+                    {{post.author | getMonogramme}}
+                </span>
+            </div>
+            <div class="name">
+                {{post.author}}
+            </div>
+        </div>
+        <div class="title">{{post.title}}</div>
+        <div class="date">{{post.publish_date}}</div>
+    </header>
+    <main>
+        <div>{{post.description}}</div>
+        <div>{{post.content | striphtml }}</div>
+        <commentsComponent [postId]="id"></commentsComponent>
+    </main>
+</div>

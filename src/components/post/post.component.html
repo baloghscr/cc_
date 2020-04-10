@@ -1,0 +1,27 @@
+<div class="post">
+    <div class="post-top">
+        <div class="avatar">
+            <span>
+                {{data.author | getMonogramme}}
+            </span>
+        </div>
+        <div class="author">
+            <div class="name">{{data.author}}</div>
+            <div class="post-title">
+                <a class="black" [routerLink]="['/post/', data.id]" routerLinkActive="active">
+                    {{data.title}}
+                </a>
+            </div>
+        </div>
+        <div class="date">{{data.publish_date}}</div>
+    </div>
+    <div class="post-mid">
+        <div>{{data.description}}</div>
+        <div>{{data.content | striphtml | slice:0:145 }}...</div>
+    </div>
+    <div class="post-bottom">
+        <div>
+            <a [routerLink]="['/post/', data.id]" routerLinkActive="active">Read more</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<header>
+    <div>
+        <p>LetsGetChecked</p>
+        <p>front end challenge</p>
+        <p>REST API</p>
+        <p>by Balazs Balogh</p>
+    </div>
+</header>
+<div class="contentWrapper">
+    <ng-container class="posts-box" *ngFor="let post of posts">
+        <postComponent [data]="post" ></postComponent>
+    </ng-container>
+</div>

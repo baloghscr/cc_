@@ -1,0 +1,98 @@
+@import "../../styles/variables";
+
+.postPage{
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: rem(20px);
+        position: relative;
+        @include gradient(#3eb733, #dae500);
+        .back{
+            position: absolute;
+            left: rem(10px);
+            top: rem(10px);
+            height: rem(20px);
+            width: rem(20px);
+            display: flex;
+            a{
+                color: #fff;
+                padding: rem(2px) rem(5px);
+                font-size: rem(12px);
+            }
+            &:before{
+                content: "";
+                display: block;
+                border-right: rem(6px) solid #fff;
+                border-top: rem(6px) solid transparent;
+                border-bottom: rem(6px) solid transparent;
+                position: relative;
+                left: 0;
+                top: rem(3px);
+                z-index: 2;
+                height: rem(0px);
+                width: rem(5px);
+            }
+
+        }
+        .author{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .avatar{
+                overflow: hidden;
+                position: relative;
+                display: inline-flex;
+                margin-right: rem(5px);
+                width: rem(25px);
+                height: rem(25px);
+                align-items: center;
+                justify-content: center;
+                border-radius: rem(3px);
+                font-weight: bold;
+                color: #fff;
+                background-color: #fff;
+                span{
+                    @include gradient(#3eb733, #dae500);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    transform: rotate(-25deg);
+                    font-size: rem(30px);
+                    font-weight: bold;
+                    position: absolute;
+                }
+            }
+            .name{
+                color: #fff;
+            }
+        }
+        .title {
+            font-size: rem(40px);
+            color: #fff;
+            border-bottom: rem(1px) solid;
+            padding: rem(10px) rem(30px);
+        }
+        .date{
+            padding: rem(10px) rem(30px);
+            color: #fff;
+        }
+    }
+    main{
+        max-width: rem(660px);
+        padding: rem(20px);
+        margin: rem(20px) auto;
+        div{
+            &:nth-child(1){
+                font-size: rem(23px);
+                font-weight: bold;
+                margin-bottom: rem(10px);
+            }
+            &:nth-child(2){
+                font-size: rem(16px);
+                line-height: rem(25px);
+                text-align: justify;
+                color: #777777;
+            }
+        }
+    }
+}

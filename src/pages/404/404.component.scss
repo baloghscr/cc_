@@ -1,0 +1,31 @@
+@import "../../styles/variables";
+
+.notFound{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    div{
+        div{
+            &:nth-child(1) {
+                font-size: rem(50px);
+                font-weight: bold;
+                line-height: rem(60px);
+                color: $main-color;
+            }
+            &:nth-child(2), &:nth-child(3) {
+                font-size: rem(12px);
+                color: $main-color;
+                text-align: right;
+                a{
+                    font-style: italic;
+                }
+            }
+            &:nth-child(4) {
+                font-size: rem(12px);
+                opacity: 0.2;
+                text-align: right;
+            }
+        }
+    } 
+}

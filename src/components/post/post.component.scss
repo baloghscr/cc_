@@ -1,0 +1,80 @@
+@import "../../styles/variables";
+
+.post{
+    background-color: #fff;
+    margin-bottom: rem(20px);
+    border-radius: rem(3px);
+    box-shadow: 0 rem(1px) rem(3px) rgba(150, 150, 150, 0.3);
+    border: rem(1px) solid #E2E2E2;
+
+    div{display: flex;}
+
+    &-top, &-mid, &-bottom { padding: rem(10px); }
+    &-title {font-size: rem(18px);}
+    &-top {
+        align-items: center;
+        font-size: rem(10px);
+        padding: rem(10px);
+        .avatar{
+            overflow: hidden;
+            position: relative;
+            display: inline-flex;
+            min-width: rem(40px);
+            height: rem(40px);
+            align-items: center;
+            justify-content: center;
+            border-radius: rem(3px);
+            font-weight: bold;
+            color: #fff;
+            font-size: rem(14px);
+            margin-right: rem(10px);
+            @include gradient(#3eb733, #dae500);
+            span{
+                transform: rotate(-25deg);
+                font-size: rem(50px);
+                position: absolute;
+            }
+        }
+        .author{
+            flex-direction: column;
+            align-items: start;
+            width: 100%;
+            .name{
+                color: $main-color;
+            }
+        }
+        .date{
+            color: #c4c4c4;
+            min-width: rem(55px);
+        }
+    }
+    &-mid {
+        flex-direction: column;
+        border-top: rem(1px) solid #e9e9e9;
+        border-bottom: rem(1px) solid #e9e9e9;
+        div{
+            &:first-child{
+                font-size: rem(14px);
+                margin-bottom: rem(14px);
+            }
+            &:last-child{
+                font-size: rem(12px);
+                line-height: rem(17px);
+                color: #868686;
+            }
+        }
+    }
+    &-bottom {
+        justify-content: end;
+        font-size: rem(11px);
+        div{
+            a{
+                color: $main-color;
+                text-decoration: none;
+                &:hover{
+                    color: #000;
+                }
+            }
+        }
+    }
+}

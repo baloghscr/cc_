@@ -1,0 +1,47 @@
+@import "./variables.scss";
+
+html {
+    font-size: rem(16px);
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: $background;
+}
+
+a{
+    color: $main-color;
+    text-decoration: none;
+    &:hover{
+        color : #000;
+    }
+    &.black{
+        color: #000;
+        &:hover{
+            color : $main-color;
+        }
+    }
+}
+.app{
+    min-height: calc(100vh - 160px);
+}
+
+footer{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    font-size: rem(12px);
+    background: #202020;
+    color: #4f4f4f;
+    height: rem(100px);
+    margin-top: rem(60px);
+}
+
+* {
+    outline: none;
+}
